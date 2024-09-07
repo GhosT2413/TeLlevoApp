@@ -25,3 +25,22 @@
 #container a {
   text-decoration: none;
 }
+
+
+.page-title {
+  text-align: center;
+  margin: 16px 0;
+}
+
+#subtitle-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background: black;
+  padding: 16px;
+}
+
+#container {
+  padding: 20px;
+}

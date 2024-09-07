@@ -1,0 +1,52 @@
+#container {
+    text-align: center;
+  
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  #container strong {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  #container p {
+    font-size: 16px;
+    line-height: 22px;
+  
+    color: #8c8c8c;
+  
+    margin: 0;
+  }
+  
+  #container a {
+    text-decoration: none;
+  }
+  
+
+  .page-title {
+    text-align: center;
+    margin: 16px 0; /* Ajusta el margen superior e inferior según sea necesario */
+  }
+  
+  #subtitle-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Ajusta la altura según el diseño */
+    background: black; /* Fondo opcional para distinguir el área del subtítulo */
+    padding: 16px; /* Espaciado opcional alrededor del subtítulo */
+  }
+  
+  #container {
+    padding: 20px;
+  }
+
+  .password-reset-link {
+    color: #007bff; /* Color azul similar a los enlaces */
+    text-decoration: underline; /* Subrayado */
+    cursor: pointer; /* Cursor de enlace */
+  }
