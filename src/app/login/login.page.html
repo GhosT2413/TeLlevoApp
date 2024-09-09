@@ -1,39 +1,3 @@
-<!-- Menu Contenido -->
-<ion-menu contentId="main-content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
-  <div class="menu-container" style="display: flex; flex-direction: column; height: 100%;">
-    <ion-list>
-      <ion-item>
-        <ion-button routerLink="/home">
-          <ion-icon name="home-outline"></ion-icon>
-          <label>Inicio</label>
-        </ion-button>
-      </ion-item>
-      <ion-item>
-        <ion-button routerLink="/about">
-          <ion-icon name="alert-circle-outline"></ion-icon>
-          <label>Sobre Nosotros</label>
-        </ion-button>
-      </ion-item>
-    </ion-list>
-
-    <div style="flex-grow: 1;"></div>
-
-    <ion-list>
-      <ion-item>
-        <ion-button routerLink="/login">
-          <ion-icon name="person-outline"></ion-icon>
-          <label>Sign In</label>
-        </ion-button>
-      </ion-item>
-    </ion-list>
-  </div>
-</ion-menu>
-<!-- Fin Menu Contenido -->
 
 
 <!-- Cuerpo de la Pagina -->
@@ -47,17 +11,15 @@
     </ion-toolbar>
   </ion-header>
 
-  <div id="subtitle-container">
-    <h1>Inicio sesión {{data.user}}</h1>
-  </div>
+  
 
   <div id="container">
     <ion-list>
       <ion-item>
-        <ion-input label="Usuario" labelPlacement="floating" placeholder="Enter text" [(ngModel)]="data.user"></ion-input>
+        <ion-input label="Correo" labelPlacement="floating" placeholder="example@duocuc.cl" [(ngModel)]="data.user"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input label="Password" type="password" labelPlacement="floating" placeholder="Enter text" [(ngModel)]="data.pw"></ion-input>
+        <ion-input label="Password" type="password" labelPlacement="floating" placeholder="Enter password" [(ngModel)]="data.pw"></ion-input>
       </ion-item>
     </ion-list>
     <br>
@@ -70,7 +32,6 @@
   </div>
 </ion-content>
 <!-- Fin Cuerpo de la Pagina -->
-
 
 
 

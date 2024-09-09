@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centra el contenedor horizontalmente */
+    align-items: center; /* Centra el contenedor verticalmente */
+    height: 100%; /* Asegura que el contenedor ocupe el 100% de la altura disponible */
+    padding: 16px; /* Ajusta el padding si es necesario */
+  }
+  
+  .location-image {
+    width: 100%; /* Ajusta el ancho al 100% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+  }
+
+
+  .zoom-animation {
+    transition: transform 0.3s ease;
+  }
+  
+  .zoom-animation:hover {
+    transform: scale(3);
+  }

@@ -17,29 +17,55 @@ export class LoginPage implements OnInit {
   constructor(private nCtrl: NavController,
     private toastController: ToastController) { }
 
-  async goHome() {
-    if (this.data.user && this.data.pw) {
-      let nExtras: NavigationExtras = {
-        queryParams: {
-          data1: this.data.user,
-          data2: this.data.pw
-        }
-      };
-      await this.nCtrl.navigateForward(['/home'], nExtras);
-    } else {
-      const toast = await this.toastController.create({
-        color: 'danger',
-        message: 'Por favor, complete todos los campos.',
-        duration: 2000,
-        position: 'bottom'
-      });
-      await toast.present();
+    async goHome() {
+      const emailRegex = /@duocuc\.cl$/; // Verifica que el correo termine en "@duocuc.cl"
+      const correctPassword = 'AdminDuocUC'; // Contraseña válida
+  
+      if (!this.data.user || !this.data.pw) {
+        // Verifica si los campos están vacíos
+        const toast = await this.toastController.create({
+          color: 'danger',
+          message: 'Por favor, complete todos los campos.',
+          duration: 2000,
+          position: 'bottom'
+        });
+        await toast.present();
+      } else if (!emailRegex.test(this.data.user)) {
+        // Valida que el correo tenga el dominio @duocuc.cl
+        const toast = await this.toastController.create({
+          color: 'danger',
+          message: 'El correo debe terminar en "@duocuc.cl".',
+          duration: 2000,
+          position: 'bottom'
+        });
+        await toast.present();
+      } else if (this.data.pw !== correctPassword) {
+        // Valida que la contraseña sea "AdminDuocUC"
+        const toast = await this.toastController.create({
+          color: 'danger',
+          message: 'La contraseña es incorrecta.',
+          duration: 2000,
+          position: 'bottom'
+        });
+        await toast.present();
+      } else {
+        // Si todo está correcto, navega a la página de inicio
+        let nExtras: NavigationExtras = {
+          queryParams: {
+            data1: this.data.user,
+            data2: this.data.pw
+          }
+        };
+        await this.nCtrl.navigateForward(['/home'], nExtras);
+      }
     }
-  }
+  
 
   goResetPassword() {
     this.nCtrl.navigateForward('/reset-password');
   }
+
+  
 
   async mostrarMensajeRedNoDisponible() {
     const toast = await this.toastController.create({

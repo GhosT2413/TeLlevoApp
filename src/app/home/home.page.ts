@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ToastController } from '@ionic/angular';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,8 @@ export class HomePage implements OnInit {
   };
 
   constructor(private aRout: ActivatedRoute,
-    private toastController: ToastController) { }
+    private toastController: ToastController,
+    private router: Router) { }
 
   async mostrarMensajeRedNoDisponible() {
     const toast = await this.toastController.create({
@@ -24,6 +26,10 @@ export class HomePage implements OnInit {
       position: 'bottom'
     });
     await toast.present();
+  }
+
+  goToLogin() {
+    this.router.navigate(['/login']);
   }
 
   ngOnInit() {

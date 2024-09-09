@@ -44,3 +44,48 @@
 #container {
   padding: 20px;
 }
+
+.welcome-container {
+  text-align: center;
+  padding: 20px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background: url('https://newsroom.porsche.com/.imaging/mte/porsche-templating-theme/image_1290x726/dam/pnr/2021/Products/911-gts/Gallery-Driving/P21_0182_a3_rgb.jpeg/jcr:content/P21_0182_a3_rgb.jpeg') no-repeat center center;
+  background-size: cover;
+  
+  h1 {
+    font-size: 24px;
+    line-height: 30px;
+    color: black; // Cambiado a negro
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 22px;
+    color: black; // Cambiado a negro
+    margin: 0;
+  }
+}
+
+.animated-logo {
+  font-size: 60px; // Tamaño del ícono
+  color: #3880ff; // Color del ícono
+  display: inline-block;
+  animation: phoneCall 1.5s infinite;
+}
+
+@keyframes phoneCall {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(15deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
